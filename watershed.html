@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="ctl00_Head1"><title>
+	Walkshed | Personal and Precise Walkability Mapping
+</title><meta id="ctl00_DescLiteral" name="description" content="Calculate personal walkability maps of New York City and Philadelphia.  Map the walkability of your city neighborhoods.  Learn how GIS technology can improve city planning and sustainability." /><meta id="ctl00_KeywordsLiteral" name="keywords" content="walkshed, walkability, custom walkability, sustainable city planning, New York City walkability, Philadelphia walkability" />
+<link type="text/css" rel="stylesheet" href="./css/home-min.css" media="screen,projection" />
+<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!--[if IE 6]>
+<link type="text/css" rel="stylesheet" href="client/walkshed/css/ie6-min.css" media="screen,projection" />
+<![endif]--><link rel="SHORTCUT ICON" href="http://cdn.azavea.com/org.walkshed/images/walkshed/images/walkshed_favicon.ico" /><link media="screen,projection" href="./css/theme-min.css" rel="stylesheet" type="text/css" /></head>
+<body>
+    <form name="aspnetForm" method="post" action="Default.aspx" id="aspnetForm">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTcwODg1MTE2Ng9kFgJmD2QWAgIBD2QWCGYPZBYCZg8WAh4EVGV4dAUzV2Fsa3NoZWQgfCBQZXJzb25hbCBhbmQgUHJlY2lzZSBXYWxrYWJpbGl0eSBNYXBwaW5nZAIBDxYCHgdjb250ZW50Bb8BQ2FsY3VsYXRlIHBlcnNvbmFsIHdhbGthYmlsaXR5IG1hcHMgb2YgTmV3IFlvcmsgQ2l0eSBhbmQgUGhpbGFkZWxwaGlhLiAgTWFwIHRoZSB3YWxrYWJpbGl0eSBvZiB5b3VyIGNpdHkgbmVpZ2hib3Job29kcy4gIExlYXJuIGhvdyBHSVMgdGVjaG5vbG9neSBjYW4gaW1wcm92ZSBjaXR5IHBsYW5uaW5nIGFuZCBzdXN0YWluYWJpbGl0eS5kAgIPFgIfAQV5d2Fsa3NoZWQsIHdhbGthYmlsaXR5LCBjdXN0b20gd2Fsa2FiaWxpdHksIHN1c3RhaW5hYmxlIGNpdHkgcGxhbm5pbmcsIE5ldyBZb3JrIENpdHkgd2Fsa2FiaWxpdHksIFBoaWxhZGVscGhpYSB3YWxrYWJpbGl0eWQCAw8WAh8ABfMBCjxsaW5rIHR5cGU9InRleHQvY3NzIiByZWw9InN0eWxlc2hlZXQiIGhyZWY9ImNsaWVudC93YWxrc2hlZC9jc3MvaG9tZS1taW4uY3NzIiBtZWRpYT0ic2NyZWVuLHByb2plY3Rpb24iIC8+CjwhLS1baWYgSUUgNl0+CjxsaW5rIHR5cGU9InRleHQvY3NzIiByZWw9InN0eWxlc2hlZXQiIGhyZWY9ImNsaWVudC93YWxrc2hlZC9jc3MvaWU2LW1pbi5jc3MiIG1lZGlhPSJzY3JlZW4scHJvamVjdGlvbiIgLz4KPCFbZW5kaWZdLS0+ZGQnIYSzf/NVgFYBakopjuOLzq8GUQ==" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" /></form>
+    <noscript>
+    <div id="js-detect">JavaScript must be enabled to use Walkshed.</div>
+    </noscript>
+
+    <div id="site-header">
+        <div id="site-header-links">
+            <div class="right">
+                <div class="link dialog-link" rel="quickstart" id="quickstart-link"><label>Quick Start</label></div>
+                <a href="http://www.cqgrd.gatech.edu/about/contact-us" target="_blank"><div class="link dialog-link" rel="contact"><label>Contact Developers</label></a></div>
+            </div>
+        </div>
+    </div>
+
+ <div id="home-container" class="content-container">
+        <div id="content-head" style="display:flex; align-items:center;">
+        <a href="/" id="logo" style="top: inherit"><h1 style="display:inline-block;color:white">HADST</h1></a>
+        <img src="http://cdn.azavea.com/org.walkshed/images/walkshed/images/dividerVert.png" id="home-head-divider" style="margin: 15px 15px 0 15px;" />
+        <h3 style="display:inline-block;color:white">Health Assessment Decision Support Tool</h3>
+        </div>
+        <div id="content-body">
+
+            <div class="panel-container left">
+                <div class="panel">
+                   <div id="cities">
+                       <div class="city first" id="city-nyc">
+                            <a href="nyc" class="city-button-image"></a>
+                            <button style="background-color:#F59C4D" class="city-button">User Guide</button>
+                       </div>
+
+                       <div class="city" id="city-philly">
+                            <a href="philly" class="city-button-image"></a>
+                            <button style="background-color:#F59C4D" class="city-button">Potential Use</button>
+                       </div>
+                    </div>
+
+                    <div class="home-promo">
+                        <div class="button-share">
+                        <!-- AddThis Button BEGIN -->
+                        <a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&amp;pub=xa-4b19a0743328e19d"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pub=xa-4b19a0743328e19d"></script>
+                        <!-- AddThis Button END -->
+                        </div>
+
+                        <p class="first">Walkability is the first step to urban sustainability. It makes our neighborhoods more economically robust, reduces our impact on the environment, and improves the health of our citizens. Walkability is about making our cities better.</p>
+                        <p>Walkshed can help you find a walkable way through the urban jungle. Our heat maps can help you pinpoint walkable neighborhoods that are close to the places you care about.</p>
+
+                    </div>
+                    <div class="clear"></div>
+                </div>
+								<div id="site-foot">
+										<div id="site-foot-links">
+											<div class="left">
+													<h6>Developed By</h6>
+													<a href="#" target="_blank">
+															<img src="./img/cqgrd-logo.png" alt="CQGRD Logo" style="height:40%;width:40%"id="logoAzavea" />
+													</a>
+											</div>
+										<div class="clear"></div>
+										</div>
+								</div>
+            </div>
+            <div class="panel-container right">
+
+
+                <div class="panel">
+
+                 <div class="learn-info first">
+                    <img src="./img/tab-1.png" style="height:25%;width:25%" class="left"/>
+										<p>
+                    	Visualise 10 parameters and assign weights to them
+										</p>
+
+								 </div>
+                 <div class="learn-info">
+                     <img src="./img/tab-2.png" style="height:25%;width:25%" class="left" />
+                     <p>
+												Set timeline and create scenario for the future
+										 </p>
+                 </div>
+
+                 <div class="learn-info">
+									 <img src="./img/tab-3.png" style="height:25%;width:25%" class="left" />
+									 <p>
+										 Visualise different scenarios and compare them with the base case.
+										 In addition you can download the data as well.
+									 </p>
+                 </div>
+                  <div class="clear"></div>
+                </div>
+
+            </div>
+              <div class="clear"></div>
+
+
+        </div>
+          <div class="clear"></div>
+    </div>
+
+
+
+<!--[if IE 6]>
+<script type="text/javascript" src="client/walkshed/ie6-walkshed.js"></script>
+<script type="text/javascript">
+    DD_belatedPNG.fix('.panel-container .panel, #logo img, #home-tagline, #home-head-divider, .header-link-arrow, .button-explore img, .button-vote img, .learn-info, .learn-info .title, #site-foot-links img, .city-button');
+</script>
+<![endif]-->
+
+    <div id="about-content" rel="About Walkshed" class="dialog-content">
+        <p>Walkshed uses an advanced methodology to calculate and map walkability. It is  the personal research project of Aaron Ogle, a software developer at <a href="http://www.azavea.com/" target="_blank">Azavea</a> in Philadelphia, PA. </p>
+        <p>While living in Seattle, Aaron became intrigued by Alan Durning of the <a href="http://www.sightline.org/" target="_blank">Sightline Institute</a> and his concept of a "<a href="http://daily.sightline.org/daily_score/archive/2006/04/05/one-mile-from-home" target="_blank">walkshed</a>" that would score a location based on the quantity and diversity of amenities within a one-mile radius. A year later, <a href="http://www.walkscore.com/" target="_blank">Walk Score</a>,  which drew heavily from Durning's walkshed concept, became the first  application to calculate walkability. Walk Score is a fantastic  application with a <a href="http://www.walkscore.com/how-it-works.shtml" target="_blank">clever methodology</a> but it also has a number of <a href="http://www.walkscore.com/how-it-doesnt-work.shtml" target="_blank">acknowledged limitations</a>. </p>
+        <p>Aaron wondered if improvements were possible. So as part of <a href="http://www.azavea.com/Research.aspx" target="_blank">Azavea's 10% research project program</a>, he has developed Walkshed Philadelphia and now Walkshed NY to demonstrate that it is possible to more accurately calculate and map walkability.</p>
+        <h3>Actual Walking Distances</h3>
+        <p>It’s  not very helpful to calculate walkability based on amenities that you  can’t actually walk to. Many communities are close to amenities “as a  crow flies” but those amenities are cut off from pedestrians by  barriers and disconnected street networks. Walkshed works by using  "friction-based" (aka "cost-based") distance calculations in lieu of  straight-line distances for the best accuracy.</p>
+        <p>Walkshed  friction calculations work by laying a grid of hundreds of thousands of  cells over the entire city and determining how much “friction” a  pedestrian would encounter for each cell. For example, cells on  interstates and rivers have very high walking friction while cells on  the street grid and parks have very low friction.</p>
+        <p>This  has important effects on walkability. 1) Barriers will have a negative  impact on walking distances since people typically don’t walk through  highways or on water. 2) Street connectivity matters. Cul-de-sacs and  winding suburban streets will have longer walking distances than an  urban street grid.</p>
+        <p>By  determining the walking friction of the entire city, we can calculate  the optimal and actual walking distance from every point in the city to  the closest amenity in every category.</p>
+        <h3>Ample Decision Factors</h3>
+        <p>It’s  difficult to make a good decision without all of the information.  Drawing from several data sources, including the city governments,  Bing, and InfoUSA, and now NYC Data Mine ,  Walkshed includes a wide array of decision factors in its walkability  calculations. More data enables more useful calculations. Some of our  favorites include rail stops, farmer’s markets, grocery stores, bars, subway stops, and Wifi hotspots.</p>
+        <h3>Your Preferences</h3>
+        <p>Walkability  means different things to different people. Empty nesters may enjoy  being near a wide variety of restaurants and theaters. Runners and  families might prefer easy access to parks and playgrounds. Young  professionals and students may like the nightlife in certain  neighborhoods. All of these people love and value walkability, but they  all have different preferences that shape it.</p>
+        <p>Using Azavea’s <a href="http://www.azavea.com/products/decisiontree/" target="_blank">DecisionTree</a> calculation  engine, Walkshed is able to dynamically account for each person’s  preferences by giving relative weights to each factor before combining  the data. This means that giving a +1 to everything is no different  than giving everything a +5 since there is no difference from factor to  factor. This also means that a +2 is twice as important than a +1, a +3  is 1.5 times more important than a +2, and so on.</p>
+        <p>Read our <a href="http://azavea.com/terms.aspx" target="_blank">Terms of Service</a> and <a href="http://azavea.com/privacy.aspx" target="_blank">Privacy Agreement</a></p>
+        <p><a href="http://www.flickr.com/photos/hoard/3344998426/" target="_blank">NYC Photo Credit</a> / <a href="http://www.flickr.com/photos/badlogik/992135711/" target="_blank">Philly Photo Credit</a></p>
+    </div>
+
+    <div id="how-it-works-content" rel="How It Works" class="dialog-content">
+        <h2>Your 60 Billion Walkability Maps<a href="javascript:void(0);" class="hide">&nbsp;</a></h2>
+        <p>You  heard right, we said 60 billion custom walkability maps for <em><strong>each</strong></em> NYC  resident.  Walkshed NYC contains 17 preferences each of which can be  set to 11 values&mdash;that's 505,447,028,499,293,771 possible maps that you can select from.  Plenty of possibilities for all 8,363,710 NYC residents. </p>
+        <p>The  complexity only begins there.   Each of the 17 walkability preferences  are made up of 157,715,256 values arranged in a grid to cover the city.    The values in your selected preferences need to be combined on the  fly to generate your distinct map.</p>
+        <p>What powers this immense calculation? <strong>DecisionTree.</strong> </p>
+        <p><img src="http://cdn.azavea.com/org.walkshed/images/walkshed/images/dt-addition.png" alt="DecisionTree diagram" /></p>
+        <p>DecisionTree  is a set of web-based planning and prioritization tools. It is able to  prioritize locations based on custom weighted geographic preferences.   Based on its calculations, DecisionTree generates a "hot spot" or  "heat" map displaying the locations that best match users' selected  preferences and weights.</p>
+        <p>Calculating custom weighted preferences quickly is the real challenge.  Distributed  computing enables DecisionTree to optimize the speed with which results  are delivered. As you might imagine, performing these calculations  is a processor-intensive operation, given that the data sets in  question are frequently comprised of thousands or even millions of  cells. Additionally, the web-based nature of DecisionTree demands that  results be delivered to end users in a timely fashion. To this end,  Azavea has exploited the nature of <a href="http://www.azavea.com/Products/DecisionTree/Learn/Glossary.aspx#weightedoverlay" target="_blank">weighted overlay</a> operations  to develop a distributed processing methodology that optimizes  resources by spreading the computing workload among multiple threads  and machines.</p>
+        <p>The  result is a graphical representation of spatial data, where values are  represented as colors along a spectrum&mdash;a heatmap. For example,  areas that best meet a user's defined priorities may be colored green,  while poorly suitable areas are shaded red. Heat maps present complex  quantitative and spatial information in a form that is easy to  understand without technical skills.</p>
+        <p>DecisionTree isn't just about walkability.  Organizations,  businesses, and government agencies regularly need to weight multiple  geographic decision factors to identify optimal locations for their  activities.  What do you want to prioritize geographically?  Contact us  at <a href="mailto:info@azavea.com">info@azavea.com</a> </p>
+       <p><a href="http://www.azavea.com/DecisionTree/Home.aspx" target="_blank">Learn more about DecisionTree</a> and <a href="http://www.azavea.com/DecisionTree/Users.aspx" target="_blank">how it might be used</a>. </p>
+   </div>
+
+    <div id="contact-content" rel="Contact Us" class="contact-dialog dialog-content">
+        <form action="#">
+            <div class="form-name-group">
+            <label for="name">Name:</label>
+            <input name="name" type="text" value="" />
+            </div>
+
+            <div class="form-email-group">
+            <label for="email">Email:</label>
+            <input name="email" type="text" value="" rel="email" />
+            </div>
+
+            <div class="form-subject-group">
+            <label for="subject">Subject:</label>
+            <input name="subject" type="text" value="" />
+            </div>
+
+            <textarea name="msg" cols="40" rows="10"></textarea>
+
+            <input name="type" type="hidden" value="msg" />
+        </form>
+        <button type="button" class="ui-state-default ui-corner-all ws-dialog-submit">Send Email</button>
+    </div>
+
+    <div id="faq-content" rel="FAQ" class="dialog-content">
+          <h3 class="first">What is Walkshed?</h3>
+          <p>Walkshed is a web application that uses an advanced methodology to calculate and map walkability.</p>
+          <h3>Who made Walkshed?</h3>
+          <p>Walkshed is the personal research project of Aaron Ogle, a software developer at <a href="http://www.azavea.com/" target="_blank">Azavea</a> in Philadelphia, PA. You can follow Aaron on Twitter (<a href="http://twitter.com/atogle" target="_blank">@atogle</a>).</p>
+          <p>Special thanks also go to Jeff Adams and Josh Marcus for work on the DecisionTree calculation engine and API, Robert Cheetham for help with  map algebra, Brian Jacobs for web site design, Dana Bauer for  assembling many of the data layers, Andrew Jennings for systems  administration, Jeremy Heffner for performance enhancements, and several others for help with assembling data sets and testing. These people are all rock stars.</p>
+          <h3>How does Walkshed work?</h3>
+          <p>Walkshed  works by combining actual walking distances with ample decision factors and your preferences. <a href="javascript:void(0);" class="dialog-link" rel="how-it-works">You can read all of the details here</a>.</p>
+          <h3>How is Walkshed different from Walk Score?</h3>
+          <p>Walkshed and <a href="http://www.walkscore.com/" target="_blank">Walk Score</a> do  very similar things but ultimately have different goals. Walk Score is  trying to provide a basic walkability metric to as many people as  possible to aid in the home-buying process. Walkshed, on the other  hand, seeks to be the gold-standard walkability calculation engine by  combining accurate walking paths with numerous data sets and  customizable priorities.</p>
+          <h3>Can I search for a location without an address?</h3>
+          <p>Yes! Hold the ALT key and click on the map within the city limits to see the walkability for that location.</p>
+          <h3>This is really awesome! Can I help?</h3>
+          <p>Absolutely!  You can start by sharing Walkshed with your friends and family. Use  Twitter or Facebook? Do you Digg? Give us a shout out! Found a bug? <a href="javascript:void(0);" class="dialog-link" rel="contact">Send it along</a> so we can fix it right away! Have something else in mind? <a href="javascript:void(0);" class="dialog-link" rel="contact">Contact us</a> and send us your thoughts.</p>
+          <h3>How did you decide on your default priority set?</h3>
+          <p>We  decided to start with only a few priorities that we thought would be  popular with most people. We’re under no illusions that it is a perfect  set of priorities, but it seems like a good starting place. As Walkshed  grows, we hope to gather enough data to see if any common priority  trends emerge.</p>
+          <h3>Where did you get your data?</h3>
+          <p>Our  data comes from a number of sources including city governments, the New York Data Mine, InfoUSA, Bing, and information from agency web sites.<br>
+          </p>
+          <h3>Is Walkshed coming to my city?</h3>
+          <p>We  hope so! Walkshed is a very young application and we’re trying to gauge  how much interest there is in this technology and its potential impact  in a number of markets. But please <a href="javascript:void(0);" class="dialog-link" rel="contact">contact us</a> and let us know how we might expand and improve Walkshed. You can also read ideas about what the next steps for an application like Walkshed could be here: <a href="javascript:void(0);" class="dialog-link" rel="further">Want to Go Further</a>
+          </p>
+          <h3>Which browsers are supported?</h3>
+          <p>We  only officially support IE7, IE8, Firefox 3.5, Chrome 3, and Safari 4  though you may have luck in other browsers. There are known bugs in IE6  and Opera.</p>
+          <h3>I found a bug. Who do I tell?</h3>
+          <p>Go to the <a href="javascript:void(0);" class="dialog-link" rel="contact">Contact Us</a> page and send us an email. We’ll get right on it!</p>
+          <h3>Why are the amenities in my neighborhood missing or categorized incorrectly?</h3>
+          <p>Unfortunately  good data is really hard to come by, although municipalities working to  make data more readily accessible. We understand that there are a  number of errors in the data sources and are working to correct them.  Thank you for your patience.</p>
+          <h3>Why doesn’t Walkshed include decision factor X?</h3>
+          <p>The  decision factors included in Walkshed are ones that 1) we have access  to the data and 2) are those we thought most impacted walkability. Have  a specific factor in mind? <a rel="contact" href="javascript:void(0);" class="dialog-link">Send it along</a>.</p>
+          <h3>How do the weights affect my walkability?</h3>
+          <p>Weights  affect walkability by ranking different amenities relative to one  another. Do you really value proximity to rail stops but are less  concerned with bars? Start by giving rail stops a +5 and bars a +2.  This essentially says that rail stops are 2.5 times as important than  bars. Keep this relativity in mind as you weight your factors.</p>
+          <h3>Why don’t I see all of the amenities around my address?</h3>
+          <p>By  default, we only place markers on the map for the factors that you  select to prevent the map from getting too cluttered. You can turn on  any amenities you wish by clicking the checkbox beside the amenity  title.</p>
+          <h3>You  said that you use actual walking distances in your calculations, but  the distances in the amenities list are obviously “as a crow flies”.  What gives?</h3>
+          <p>Yes,  we do use actual walking distances in calculating walkability but that  data is stored in a format that is difficult to render as points. So in  order to give some context to your walkability score, we draw a circle  around your address and return the ten closest amenities in each  category along with their approximate, straight-line distance.</p>
+          <h3>Why doesn’t the walkshed layer change after I update the weights?</h3>
+          <p>The walkshed layer will only update after you click the Calculate Walkshed button under the Adjust Priorities tab.</p>
+          <h3>Can I turn off the walkshed layer?</h3>
+          <p>Yes. You can either calculate a walkshed with zeros for every decision factor or adjust the opacity slider to 0%.</p>
+          <h3>Can I change the base map layer?</h3>
+          <p>Yes. Click on the Map Layers menu button and select the base map you prefer.</p>
+          <h3>Can I adjust the opacity of the walkshed layer?</h3>
+          <p>Yes. Click on the Map Layers menu button and adjust the opacity slider.</p>
+          <h3>Can I print my walkshed?</h3>
+          <p>No, we do not have a print page at this time.</p>
+    </div>
+
+    <div id="further-content" rel="Want to Go Further?" class="dialog-content">
+        <h2>How <a href="javascript:void(0);" class="hide">&nbsp;</a>can geographic analysis tools, like Walkshed, promote a  more sustainable economy and environment?</h2>
+        <p>Sustainable Development does not just mean a cleaner  environment; it also requires establishing local economies that are  economically viable and socially responsible. It will involve a shift in  mindset in terms of how we approach individual life, business, and government.  And it will require the transformation of  both public policy and the technologies we use to operate our community  systems.</p>
+        <p>At the heart of it all is <em>geography</em>. Measuring a city’s  walkability is just the beginning.  Planning water sources, land use, optimal  public transit routes, better sidewalk networks and bike lanes, traffic light  timing, and distance from diverse habitats are just a few of the ways that  geographic technology can help us make our towns and cities operate in a more  sustainable manner.</p>
+        <ul>
+            <li>Where would your community start a new wind farm?</li>
+            <li>Where should your local government invest in land preservation?</p>
+            <li>Where are the sidewalk and bike networks in your city and  how can they be made more accessible with limited funding?</li>
+            <li>Where should a solar panel company invest to build more  solar panels?</li>
+        </ul>
+        <p>The <a href="http://www.azavea.com/products/decisiontree/home.aspx" target="_blank">DecisionTree software</a> that makes Walkshed possible can help  you answer these questions. It is the engine that enables users of Walkshed.org  to understand which neighborhoods are most walkable based on their individual  priorities. Its core value is to enable you to weight and prioritize multiple  geographic decision factors to identify the best locations for specific  activities.</p>
+        <p>Planning processes and public decisions often require  extensive involvement by interested parties. Behaviors and policies are slow to  change, but we're excited to help. What is your vision for sustainable living?  We can help you make a geographic case for  your community.  Contact us at  <a href="mailto:info@azavea.com">info@azavea.com</a></p>
+
+    </div>
+
+    <div id="azavea-content" rel="About Azavea" class="dialog-content">
+        <h3 class="first"><a href="http://www.azavea.com" target="_blank"><img src="http://cdn.azavea.com/org.walkshed/images/walkshed/images/azavea_RGB_72dpi_trans_143x59.png" alt="Azavea" class="rightimg" /></a>Azavea is a boutique systems design and software development firm located in Philadelphia. What do we mean by "boutique"? </h3>
+        <p>We don’t just write software, we specialize in web-based geographic analysis and modeling applications for government (local, state and federal), non-profit and academic clients.
+        <p>We develop innovative, web-based software, web services and products that use mapping technologies and geography (GIS) to solve complex, interesting, and novel problems. </p>
+        <p>We have particular expertise in natural resource planning, economic development, crime analysis, real estate property analysis, and cultural resources, but are engaged in a wide range of other interesting projects. </p>
+        <p>We believe we can make a difference by promoting the emergence of more dynamic, vibrant communities through geographic information technologies.  Each of our clients’ projects, products and pro bono engagements showcases this commitment.</p>
+        <p>Visit us at: <strong><a href="http://www.azavea.com" target="_blank">http://www.azavea.com</a></strong></p>
+
+    </div>
+
+    <div id="quickstart-content" rel="Quick Start" class="dialog-content">
+        <img src="http://cdn.azavea.com/org.walkshed/images/walkshed/images/quickstart_graphic.jpg" /><br />
+        <h2>Walkshed enables you to make very precise and personal walkability calculations. Adjust your priorities to explore walkability in a new and personal way!</h2>
+        <!--
+        <div id="skip-startup-group">
+            <input id="skip-startup" name="skip-startup" type="checkbox" />
+            <label for="skip-startup">Don't Show on Startup</label>
+        </div>
+        -->
+    </div>
+
+    <!-- Loading scripts at the end is faster -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js" type="text/javascript"></script>
+
+
+
+    <script src="client/walkshed/master-min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        Walkshed.MasterManager = Walkshed.ApplicationManager({
+            tools: {
+                mail: Walkshed.Mail()
+            },
+            managers: {
+                map: function(){}, //No map manager on the master app manager
+                layout: Walkshed.Master
+            }
+        }).init();
+    });
+    </script>
+
+    <!-- Custom scripts -->
+
+
+    <!-- Start Google Analytics tag -->
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        var _pageTracker;
+        try {
+            _pageTracker = _gat._getTracker("UA-970854-12");
+            _pageTracker._trackPageview();
+        } catch(err) {}
+    </script>
+    <!-- End Google Analytics tag -->
+
+    <!-- Start Crazyegg tag -->
+    <script type="text/javascript" src="http://cetrk.com/pages/scripts/0010/4586.js"> </script>
+    <!-- End Crazyegg tag -->
+
+    <!-- Start Quantcast tag -->
+    <script type="text/javascript"> _qoptions = { qacct:"p-73BOlTUPbYKa2" }; </script>
+    <script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+    <noscript>
+        <img src="http://pixel.quantserve.com/pixel/p-73BOlTUPbYKa2.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/>
+    </noscript>
+    <!-- End Quantcast tag -->
+
+    <!-- Google Code for All Walkshed Visitors Remarketing List -->
+    <script type="text/javascript">
+    <!--
+    var google_conversion_id = 1060410112;
+    var google_conversion_language = "en";
+    var google_conversion_format = "3";
+    var google_conversion_color = "666666";
+    var google_conversion_label = "bVAiCOjNzwEQgKbS-QM";
+    var google_conversion_value = 0;
+    //-->
+    </script>
+    <script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js"></script>
+    <noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1060410112/?label=bVAiCOjNzwEQgKbS-QM&amp;guid=ON&amp;script=0"/>
+    </div>
+    </noscript>
+</body>
+</html>
